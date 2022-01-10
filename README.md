@@ -4,7 +4,7 @@
 10 January 2022
 
 ### Project Title
-Bike Share Data Analysis
+US Bike Share Data Analysis
 
 ### Description
 Program that Analyses bike sharing data from Washington, Chicago and New York City
