@@ -19,18 +19,18 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-    print('Hello! Let\'s explore some US bikeshare data!')
+    print('Hello User! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
 
     print('Would you like to see data for Chicago, New York City, or Washington?')
     while True:
-        city = input('Selection..: ').lower() 
+        city = input('Selection..: ').lower()
         if city in cities:
             print ('Great, let\'s look at {}!'.format(city.title()))
             break
-        else: 
+        else:
             print ('I\'m sorry, please select \'Chicago\', \'New York City\' or \'Washington\'')
-        
+
     print('We will now filter the data by month, day, or not at all!')
     # TO DO: get user input for month (all, january, february, ... , june)
     print('Which month? - please use the first 3 letters of the month in question. Enter \'all\' for no filter')
@@ -51,7 +51,7 @@ def get_filters():
             break
         else:
             print('Not recognized. Please select a day or \'all\' - use full name of the day, i.e monday')
-    
+
     print('-'*40)
     return city, month, day
 
@@ -69,15 +69,15 @@ def load_data(city, month, day):
     """
     # load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city])
-   
+
     # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
-    
+
     # extract fields from the Start Time column to create an field column
     df['month'] =df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
     df['hour'] = df['Start Time'].dt.hour #not sure if i need this line#
-    
+
     # filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
@@ -90,7 +90,7 @@ def load_data(city, month, day):
     if day != 'all':
         # filter by day of week to create the new dataframe
         df = df[df['day_of_week'] == day.title()]
-    
+
     return df
 
 
@@ -148,11 +148,11 @@ def trip_duration_stats(df):
     total_travel_time = df['Trip Duration'].sum()
     print("Total travel time_s :", total_travel_time)
     print("Total travel time_h :", ((total_travel_time/60)/60))
-    
+
     # TO DO: display mean travel time
     mean_travel_time = df['Trip Duration'].mean()
     print("Mean travel time_s :", mean_travel_time)
-          
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -166,32 +166,32 @@ def user_stats(df):
     # TO DO: Display counts of user types
     user_type_count = df['User Type'].value_counts()
     print(user_type_count)
-    
+
     # TO DO: Display counts of gender
-    
-    try:   
+
+    try:
         gender_count = df['Gender'].value_counts()
         print(gender_count)
-        
+
     except:
         print('No gender data')
-        
+
 
     # TO DO: Display earliest, most recent, and most common year of birth
-    
-    try:   
+
+    try:
         birth_year = df['Birth Year']
         mode_age = df['Birth Year'].mode()[0]
         youngest_age = df['Birth Year'].max()
         oldest_age = df['Birth Year'].min()
-    
+
         print('Most common Year of Birth: ', mode_age)
         print('Youngest Year of Birth: ', youngest_age)
         print('Oldest Year of Birth: ', oldest_age)
-    
+
     except:
         print('No age data')
-        
+
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
