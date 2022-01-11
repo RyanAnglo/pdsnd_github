@@ -29,7 +29,7 @@ def get_filters():
             print ('Great, let\'s look at {}!'.format(city.title()))
             break
         else:
-            print ('I\'m sorry, please select \'Chicago\', \'New York City\' or \'Washington\'')
+            print ('I\'m sorry, please select the state \'Chicago\', \'New York City\' or \'Washington\'')
 
     print('We will now filter the data by month, day, or not at all!')
     # TO DO: get user input for month (all, january, february, ... , june)
