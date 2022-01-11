@@ -7,10 +7,10 @@
 US Bike Share Data Analysis
 
 ### Description
-Program that Analyses bike sharing data from Washington, Chicago and New York City
+Program that analyses bike sharing data from Washington, Chicago and New York City
 
 ### Files used
-bikeshare_2 python file, chicago.csv washington.csv and new_york_city.csv (data files)
+bikeshare_2 python file. chicago.csv, washington.csv, and new_york_city.csv (data files)
 
 ### Credits
 Codes modified from Udacity Citizen Data Analyst course v2020-2022
