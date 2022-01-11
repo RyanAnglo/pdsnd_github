@@ -13,4 +13,4 @@ Program that analyses bike sharing data from Washington, Chicago and New York Ci
 bikeshare_2 python file. chicago.csv, washington.csv, and new_york_city.csv (data files)
 
 ### Credits
-Codes modified from Udacity Citizen Data Analyst course v2020-2022
+Codes modified from Udacity Citizen Data Analyst course v2020-2022 and Github bikeshare project. Please see Udacity course for links
